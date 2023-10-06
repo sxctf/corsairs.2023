@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="static/css/main.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='./favicon.ico')}}">
+    <title>Monitoring System</title>
+</head>
+
+<body background="static/menyu_5.png" style="width: 100%">
+  <div>
+    <button class="cyber-button4">
+        <a href="/">Main Page</a>
+    </button>    
+</div>
+
+<div class="update_data1">
+  <form method="post" autocomplete="off">
+    <label>Weapon Name</label>
+    <br>
+    <input class="input_block" type="text" name="weapon_name" placeholder="Input weapon name" required="true">
+    <br>
+    <br>
+    <br>
+    <label>Serial Number</label>
+    <br>
+    <input type="text" name="serial_number" placeholder="Input serial name" required="true">
+    <br>
+    <br>
+    <button class="cyber-button3" type="submit" name="button_to_update">Update data</button>
+  </form>
+</div>
+
+<div class="check_data1">
+  <p>Check info by Factory_name</p>
+  <form method="post" autocomplete="off">
+    <label>Factory_name</label>
+    <br>
+    <input type="text" name="fn_check" placeholder="Input Factory_name" required>
+    <br>
+    <br>
+    <button class="cyber-button3" type="submit" name="button_to_check">Check data</button>
+  </form>
+</div>
+
+<div class="form_auth_block">
+    <div class="form_auth_block_content">
+      <p class="form_auth_block_head_text">Authorization</p>
+      <br>
+      <form class="form_auth_style" action="#" method="post" autocomplete="off">
+        <label>Login</label>
+        <input type="login" name="auth_login" placeholder="Input login" required>
+        <br>
+        <br>
+        <label>Password</label>
+        <input type="password" name="auth_pass" placeholder="Input password">
+        <button class="form_auth_button" type="submit" name="form_auth_submit">Enter</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

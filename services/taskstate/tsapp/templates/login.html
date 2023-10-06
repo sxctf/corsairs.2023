@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+TaskState
+{% endblock %}
+
+{% block body %}
+<p class="lead text-success"> <b> # Login on service TaskState </b> </p>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <div class="alert alert-warning" role="alert">
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+{% endwith %}
+<div class="alert alert-success" role="alert">
+  <form action="/login" method="post">
+      <div class="input-group mb-1">
+          <span class="input-group-text" id="basic-addon1">Login</span>
+          <input type="text" name="login" id="login" class="form-control" aria-describedby="basic-addon1" minlength="3" maxlength="128" required>
+      </div>
+      <div class="input-group mb-1">
+          <span class="input-group-text" id="basic-addon2">Password</span>
+          <input type="password" name="password" id="password" class="form-control" aria-describedby="basic-addon1" minlength="3" maxlength="255" required>
+      </div>
+      <input type="submit" class="btn btn-success" value="LOGIN"><br>
+  </form>
+  </div>
+<a href="/reg" class="btn btn-warning">Registration</a>
+<a href="/passrec" class="btn btn-secondary">Password recovery</a>
+{% endblock %}

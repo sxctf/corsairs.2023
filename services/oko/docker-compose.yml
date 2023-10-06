@@ -1,0 +1,49 @@
+version: '2.20.3'
+services:
+  oko-mariadb:
+    image: mariadb:latest
+    restart: always
+    environment:
+      - MARIADB_USER=ctf
+      - MARIADB_PASSWORD=try_hack_me
+      - MARIADB_RANDOM_ROOT_PASSWORD=yes
+    ports:
+      - 5100:3306
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./data/maria:/var/lib/mysql
+    networks:
+         mynet:
+          ipv4_address: 172.30.0.3
+  
+  web:
+    build: .
+    volumes:
+      - ./:/app
+    ports:
+      - 5000:5000
+    depends_on:
+      - oko-mariadb
+      - oko-mongodb
+    networks:
+        mynet:
+          ipv4_address: 172.30.0.2
+
+  oko-mongodb:
+    image: mongo:latest
+    restart: always
+    ports:
+      - 5200:27017
+    volumes:
+      - ./db/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+      - ./data/mongo:/data/db
+    networks:
+         mynet:
+          ipv4_address: 172.30.0.4
+    
+networks:
+  mynet:
+    driver: bridge
+    ipam:
+        config:
+          - subnet: 172.30.0.0/24

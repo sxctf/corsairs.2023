@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='./favicon.ico')}}">
+    <link rel="image" href="{{ url_for('static', filename='./Interfeys_7.png')}}">
+    <title>Monitoring System</title>
+</head>
+
+<body background="static/fon.png" style="background-size: auto;">
+
+<h1 style='text-align: center; font-family: Oxanium; color:yellow;'>FirmwareS<h1>
+
+<div>
+    <button class="cyber-button5" style="text-decoration: none;">
+        <a href="/">Main Page<a>
+    </button>
+    <button class="cyber-button5" style="text-decoration: none;">
+        <a href="/dblogin2">Back<a>
+    </button>    
+</div>
+
+<table class="table">
+    <tr>
+        <td style="font-weight: bold; font-family: Oxanium; color:cyan; text-align:center;">ID</td>
+        <td style="font-weight: bold; font-family: Oxanium; color:cyan; text-align:center;">Frimware_name</td>
+        <td style="font-weight: bold; font-family: Oxanium; color:cyan; text-align:center;">Version</td>
+        <td style="font-weight: bold; font-family: Oxanium; color:cyan; text-align:center;">Device Type</td>
+        <td style="font-weight: bold; font-family: Oxanium; color:cyan; text-align:center;">RAM size(GB)</td>
+        <td style="font-weight: bold; font-family: Oxanium; color:cyan; text-align:center;">BIOS_name</td>
+        <td style="font-weight: bold; font-family: Oxanium; color:cyan; text-align:center;">Enabled status</td>
+    </tr>
+    {% for element in elements %}
+    <tr>
+        <td style="font-family: Oxanium; color:yellow; text-align:center;" id='0'>{{ element['_id'] }}</td>
+        <td style="font-family: Oxanium; text-align:center;" id='1'>{{ element['Firmware_name'] }}</td>
+        <td style="font-family: Oxanium; text-align:center;" id='2'>{{ element['Version'] }}</td>
+        <td style="font-family: Oxanium; text-align:center;" id='3'>{{ element['Device_type'] }}</td>
+        <td style="font-family: Oxanium; text-align:center;" id='4'>{{ element['RAM size'] }}</td>
+        <td style="font-family: Oxanium; text-align:center;" id='5'>{{ element['bios'] }}</td>
+        <td style="font-family: Oxanium; text-align:center;" id='6'>{{ element['enabled'] }}</td>
+    </td>
+    {% endfor %}
+
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %} - Siren</title>
+    <style>
+        .message {
+            padding: 10px;
+            margin: 5px;
+            background-color: #f3f3f3
+        }
+        nav a {
+            color: #d64161;
+            font-size: 3em;
+            margin-left: 50px;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('ask') }}">Siren</a>
+    </nav>
+    <hr>
+    <div class="content">
+        {% block content %}
+        <h1>ASK</h1>
+        <form action="/ask" method="POST">
+            <input type="text" id="question" name="question"><br>
+            <input type="submit" value="Submit">
+        </form>
+        {% endblock %}
+    </div>
+</body>
+</html>

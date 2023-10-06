@@ -1,0 +1,7 @@
+Ekaterina\homework\Repository\TaskRepository.class
+Ekaterina\homework\Service\TaskService.class
+Ekaterina\homework\Controller\TaskController.class
+Ekaterina\homework\Config\SecurityConfig.class
+Ekaterina\homework\Controller\IndexController.class
+Ekaterina\homework\Entity\Task.class
+Ekaterina\homework\EasyAppApplication.class

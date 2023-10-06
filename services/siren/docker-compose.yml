@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  siren-app:
+    build:
+      context: ./
+      dockerfile: Flask-Dockerfile
+    image: siren-app-image:latest
+    container_name: siren-app
+    restart: always
+    expose:
+      - "2345"
+    volumes:
+      - ./logs/siren-app.log:/siren/logs/siren.log
+      - ./secrets/:/siren/secrets/
+  nginx:
+    image: fabiocicerchia/nginx-lua:1.17.10-debian10.4-slim
+    container_name: siren-nginx
+    restart: always
+    depends_on:
+      - "siren-app"
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./logs/siren-nginx.log:/var/log/nginx/server.log

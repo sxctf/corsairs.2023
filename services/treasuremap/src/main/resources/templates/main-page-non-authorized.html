@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Treasure map</title>
+    <link href="/styles/main-page.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="main-container">
+
+    <div class="upper-part main-container">
+        <div class="search-container">
+        </div>
+
+        <div class="main-title">
+            Treasure Map
+        </div>
+        <div class="profile-menu">
+            <div class="nickname"> Corsair</div>
+            <div class="turn-to-registration-btn"> Registration</div>
+            <div class="sign-in-btn"> Sign in</div>
+        </div>
+    </div>
+
+    <div class="middle-container main-container">
+        <div class="hexagon-container">
+            <div class="upper-octagon-container">
+                <div class="octagon-background-container" th:name="${locations.get(0).getNameOfLocation()}">
+                    <div id="first-location" class="octagon-block">
+                        <div class="location-data-container">
+                            <a class="location-name-container" th:text="${locations.get(0).getNameOfLocation()}"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="octagon-background-container"
+                     th:name="${locations.get(1).getNameOfLocation()}">
+                    <div id="second-location" class="octagon-block">
+                        <div class="location-data-container">
+                            <a class="location-name-container" th:text="${locations.get(1).getNameOfLocation()}"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="octagon-background-container"
+                     th:name="${locations.get(2).getNameOfLocation()}">
+                    <div id="third-location" class="octagon-block">
+                        <div class="location-data-container">
+                            <a class="location-name-container" th:text="${locations.get(2).getNameOfLocation()}"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lower-octagon-container">
+                <div class="octagon-background-container"
+                     th:name="${locations.get(3).getNameOfLocation()}">
+                    <div id="fourth-location" class="octagon-block">
+                        <div class="location-data-container">
+                            <a class="location-name-container" th:text="${locations.get(3).getNameOfLocation()}"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="octagon-background-container"
+                     th:name="${locations.get(4).getNameOfLocation()}">
+                    <div id="fifth-location" class="octagon-block">
+                        <div class="location-data-container">
+                            <a class="location-name-container" th:text="${locations.get(4).getNameOfLocation()}"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lower-part main-container">
+        <div class="search-results">
+            <table class="info-table">
+                <tbody class="info-table-body">
+                <tr class="row">
+                    <th>Treasure</th>
+                    <th>Location</th>
+                    <th>Corsair</th>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="add-container">
+            <input class="add-container-input" placeholder="Add container" required>
+            <button class="add-container-btn"> +</button>
+        </div>
+        <div style="width: 33%"></div>
+    </div>
+
+</div>
+</body>
+
+<script src="/js/jquery-3.7.0.min.js"></script>
+<script src="/js/main-page.js"></script>
+
+</html>

@@ -1,0 +1,5 @@
+.get_passport {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

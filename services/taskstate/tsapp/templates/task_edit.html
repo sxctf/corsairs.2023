@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}
+TaskState
+{% endblock %}
+
+{% block body %}
+
+<p class="lead text-success"> <b> # Edit task </b> </p>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <div class="alert alert-warning" role="alert">
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+{% endwith %}
+<div class="alert alert-success text-success" role="alert">
+  <form action='/task/{{ task.tid }}/edit' method="post">
+      <div class="input-group mb-1">
+          <span class="input-group-text" id="basic-addon1">Title*</span>
+          <input type="text" name="title" id="title" class="form-control" aria-describedby="basic-addon1" value="{{ task.title }}" minlength="3" maxlength="255" required>
+      </div>
+      <div class="input-group mb-1">
+          <span class="input-group-text" id="basic-addon2">Description</span>
+          <input type="text" name="description" id="description" class="form-control" aria-describedby="basic-addon1" value="{{ task.description }}" minlength="3" maxlength="255">
+      </div>
+      <div class="input-group mb-1">
+          <label class="input-group-text" for="inputGroupSelect01">Type*</label>
+          <select class="form-select" name="did" id="did">
+              {% for el in desteam %}
+                {% if task.did == loop.index0 %}
+                  <option value="{{ loop.index0 }}" selected>{{ el }}</option>
+                {% else %}
+                  <option value="{{ loop.index0 }}">{{ el }}</option>
+                {% endif %}
+              {% endfor %}
+          </select>
+      </div>
+      <div class="input-group mb-3">
+          <label class="input-group-text" for="inputGroupSelect02">Private*</label>
+          <select class="form-select" name="private" id="private">
+            {% if task.private %}
+              <option value="False">False</option>
+              <option value="True" selected>True</option>
+            {% else %}
+              <option value="False" selected>False</option>
+              <option value="True">True</option>
+            {% endif %}
+          </select>
+      </div>
+      <b>*Required fields</b><br>
+      <input type="submit" class="btn btn-success" value="Edit Task"><br>
+  </form>
+  </div>
+{% endblock %}

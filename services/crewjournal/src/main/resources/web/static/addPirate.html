@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Pirate</title>
+    <link rel="stylesheet" href="css/addPirate.css">
+</head>
+    <body>
+        <header class="add">
+            <h1>Crew Journal</h1>
+        </header>
+        <div class="add">
+            <h2>Adding Pirate Form</h2>
+            <form class="young_form" method="post" action="/addPirate">
+                <label for="name_field">Name</label>
+                <br>
+                <input id="name_field" name="name_field" required>
+                <br>
+                <label for="rank_field">Rank</label>
+                <br>
+                <input id="rank_field" name="rank_field" required value="young" readonly>
+                <br>
+                <label for="login_field">Login</label>
+                <br>
+                <input id="login_field" name="login_field" required>
+                <br>
+                <label for="password_field">Password</label>
+                <br>
+                <input id="password_field" type="password" name="password_field" required>
+                <br>
+                <label for="passport_field">Passport</label>
+                <br>
+                <input id="passport_field" name="passport_field" required>
+                <br>
+                <label for="email_field">Email</label>
+                <br>
+                <input id="email_field" name="email_field" required value="some@mail.com" type="email">
+                <br>
+                <p><input type="submit" value="Add"></p>
+            </form>
+        </div>
+    </body>
+</html>

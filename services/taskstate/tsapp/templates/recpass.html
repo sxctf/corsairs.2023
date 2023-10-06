@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}
+TaskState
+{% endblock %}
+
+{% block body %}
+<div class="p-3 rounded-2" style="background-color: var(--bs-danger-bg-subtle)">
+  <p class="lead"> <b> # User password recovery </b> </p>
+</div><br>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <div class="alert alert-warning" role="alert">
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+{% endwith %}
+{% if p == 0 %}
+<div class="alert alert-success text-success" role="alert">
+  <form action="/passrec" method="get">
+      <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">Login</span>
+          <input type="text" name="login" id="login" class="form-control" aria-describedby="basic-addon1" minlength="3" maxlength="128" required>
+      </div>
+      <input type="submit" class="btn btn-success" value="Password_recovery"><br>
+  </form>
+</div>
+{% endif %}
+{% if p == 1 %}
+<div class="alert alert-success text-success" role="alert">
+  <form action="/passrec" method="get">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon2">New Password</span>
+        <input type="password" name="password" id="password" class="form-control" aria-describedby="basic-addon1" minlength="3" maxlength="255" required>
+      </div>
+      <input type="hidden" name="token" value="{{ token }}">
+      <input type="submit" class="btn btn-success" value="Password_recovery"><br>
+  </form>
+</div>
+{% endif %}
+
+{% endblock %}

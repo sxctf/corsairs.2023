@@ -1,0 +1,353 @@
+html {
+    background-size: cover;
+    height: 98.9vh;
+    width: 100%;
+    background-image: url('/image/map-background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.location-data-container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+}
+
+.location-name-container {
+    font-family: cursive;
+    font-size: 3vh;
+    width: 100%;
+    color: greenyellow;
+}
+
+.octagon-containers-count {
+    width: 100%;
+    color: greenyellow;
+}
+
+.main-container {
+    height: 33%;
+    width: 100%;
+}
+
+.middle-container {
+    display: flex;
+    justify-content: center;
+}
+
+.upper-octagon-container {
+    display: flex;
+}
+
+.lower-octagon-container {
+    display: flex;
+    margin-left: 12.5vh;
+    margin-top: -5.7vh;
+}
+
+.octagon-block {
+    background-size: cover;
+    cursor: pointer;
+    width: 25vh;
+    height: 25vh;
+    color: #fff;
+    text-align: center;
+    clip-path: polygon(50% 2%, 98% 25%, 98% 75%, 50% 98%, 2% 75%, 2% 25%);
+    display: flex;
+    justify-content: end;
+}
+
+.octagon-background-container {
+    background-size: cover;
+    cursor: pointer;
+    width: 25vh;
+    height: 25vh;
+    color: #fff;
+    text-align: center;
+    clip-path: polygon(50% 1%, 99% 25%, 99% 75%, 50% 99%, 1% 75%, 1% 25%);
+    display: flex;
+    justify-content: end;
+    background-color: #00a5ff;
+}
+
+#first-location {
+    background-image: url('/image/1_image.jpg');
+}
+
+#second-location {
+    background-image: url('/image/2_image.jpg');
+}
+
+#third-location {
+    background-image: url('/image/3_image.jpg');
+}
+
+#fourth-location {
+    background-image: url('/image/4_image.jpg');
+}
+
+#fifth-location {
+    background-image: url('/image/5_image.jpg');
+}
+
+.upper-part {
+    display: grid;
+}
+
+.main-title {
+    font-family: cursive;
+    color: rgb(41, 181, 158);
+    justify-self: center;
+    margin-top: -9vh;
+    font-size: 8vh;
+    -webkit-text-stroke: 0.3vh #2F73B6;
+}
+
+.search-results, .add-container {
+    width: 33%;
+}
+
+.search-results {
+    overflow-y: scroll;
+}
+
+.profile-menu {
+    position: fixed;
+    top: 2vh;
+    right: 2vh;
+    display: flex;
+    align-items: center;
+}
+
+.nickname {
+    font-size: 2.5vh;
+    font-weight: bold;
+    color: rgb(41, 181, 158);
+    margin-right: 1vh;
+}
+
+.sign-up-btn,
+.sign-in-btn, .log-out, .turn-to-map, .turn-to-registration-btn {
+    cursor: pointer;
+    padding: 1vh 1vh;
+    background-color: #2F73B6;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 0.4vh;
+    margin-right: 1vh;
+}
+
+#text-container {
+    text-align: center;
+    color: rgb(41, 181, 158);
+}
+
+.search-results::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+}
+
+.search-results::-webkit-scrollbar-track {
+    background: rgb(38, 123, 163);
+    border-top-right-radius: 0.5vh;
+}
+
+.search-results::-webkit-scrollbar-thumb {
+    background-color: rgb(41, 181, 158);
+    border-radius: 1vh;
+}
+
+.sign-up-btn:hover,
+.sign-in-btn:hover {
+background-color: #1F5B96;
+}
+
+.info-table {
+width: 100%;
+border-collapse: collapse;
+background-color: transparent;
+}
+
+.info-table th, .info-table td {
+padding: 8px;
+text-align: left;
+border-bottom: 1px solid rgb(38, 123, 163);
+border-right: 1px solid rgb(38, 123, 163);
+color: #fff;
+}
+
+.info-table th:first-child, .info-table td:first-child {
+border-left: 1px solid rgb(38, 123, 163);
+}
+
+.info-table th:last-child, .info-table td:last-child {
+border-right: none;
+}
+
+.info-table th {
+background-color: rgba(38, 123, 163, 0.7);
+}
+
+.info-table tr:hover {
+background-color: rgba(38, 123, 163, 0.3);
+}
+
+.info-table-body {
+font-size: 14px;
+}
+
+.info-table .row:nth-child(even) {
+background-color: rgba(38, 123, 163, 0.2);
+}
+
+.info-table .row:nth-child(odd) {
+background-color: rgba(38, 123, 163, 0.1);
+}
+
+
+.authentication-form {
+width: 25%;
+display: grid;
+background-color: wheat;
+padding: 3vh;
+border-radius: 1vh;
+height: 100%;
+}
+
+.auth-title, .reg-title {
+font-size: 2.5vh;
+text-align: center;
+}
+
+.form-group {
+display: flex;
+flex-direction: column;
+}
+
+
+.credentials-name, .auth-btn {
+font-size: 2vh;
+}
+
+.credentials-input, .auth-btn {
+height: 3vh;
+}
+
+
+.search-container {
+width: 15%;
+}
+
+.search-container-input {
+width: 100%;
+height: 3vh;
+padding: 0.5vh;
+border: 0.4vh solid #2a7096;
+border-radius: 0.5vh;
+background-color: #031014;
+}
+
+.info-table-body {
+color: white;
+
+}
+
+td {
+word-wrap: break-word;
+text-align: center;
+}
+
+.info-table {
+border: 0.4vh solid #2a7096;
+border-left: aliceblue;
+border-bottom: aliceblue;
+height: 100%;
+border-top-right-radius: 1vh;
+width: 100%;
+table-layout: fixed;
+}
+
+/*border-collapse: collapse;*/
+
+
+.row {
+    height: 3vh;
+}
+
+.lower-part {
+    display: flex;
+}
+
+form, .registration-form {
+    width: 30%;
+    height: 110%;
+    border: solid rgb(41, 181, 158);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 1vh;
+}
+
+.title {
+    font-size: 3vh;
+    color: rgb(41, 181, 158);
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 95%;
+    padding: 1vh;
+    margin-bottom: 1vh;
+}
+
+input[type="submit"], #registration-btn {
+    height: 3vh;
+    margin-bottom: 1vh;
+    border: none;
+    border-radius: 1vh;
+    background-color: white;
+    color: rgb(41, 181, 158);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-container input {
+    border: 0.4vh solid #2a7096;
+    padding: 0.5vh;
+    border-radius: 0.5vh;
+    background-color: #031014;
+    width: 50%;
+    color: white;
+}
+
+.add-container button {
+    background-color: #031014;
+    color: #fff;
+    border: 0.4vh solid #2a7096;
+    padding: 0.3vh 1vh;
+    cursor: pointer;
+    border-radius: 0.5vh;
+    margin-left: 0.4vh;
+    height: 4.1vh;
+    width: 4.1vh;
+}
+
+* {
+    font-family: cursive;
+}

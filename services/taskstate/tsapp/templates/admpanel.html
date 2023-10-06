@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block title %}
+TaskState - AdminPanel
+{% endblock %}
+
+{% block body %}
+    <div class="p-3 rounded-2" style="background-color: var(--bs-danger-bg-subtle)">
+        <p class="lead"> <b> # AdminPanel for user management </b> </p>
+    </div>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="alert alert-warning" role="alert">
+            <ul class=flashes>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    {% endwith %}
+    {% if reg > 0 %}
+    <br><div class="p-3 rounded-2" style="background-color: var(--bs-danger-bg-subtle)">
+        <p class="lead"> <b> # Start initialization >> Registration of a new captain for the service   </b> </p>
+    </div>
+    <div class="alert alert-dark" role="alert">
+        <form action="/admreg" method="post">
+            <div class="input-group mb-1">
+                <span class="input-group-text" id="basic-addon1">Login*</span>
+                <input type="text" name="login" id="login" class="form-control" aria-describedby="basic-addon1" minlength="3" maxlength="128" required>
+            </div>
+            <div class="input-group mb-1">
+                <span class="input-group-text" id="basic-addon2">Password*</span>
+                <input type="password" name="password" id="password" class="form-control" aria-describedby="basic-addon1" minlength="3" maxlength="255" required>
+            </div>
+            <div class="input-group mb-1">
+              <span class="input-group-text" id="basic-addon2">E-mail</span>
+              <input type="text" name="email" id="email" class="form-control" aria-describedby="basic-addon1" minlength="3" maxlength="255">
+            </div>
+            <b>*Required fields</b><br>
+            <input type="submit" class="btn btn-success" value="Reg"><br>
+        </form>
+    </div>
+    {% endif %}
+    {% if reg == 0 %}
+        {% if users.items|length > 0 %}
+        <table class="table table-dark text-success">
+            <thead>
+                <tr>
+                    <th scope="col"><b>#User.ID</b></th>
+                    <th scope="col">DateReg</th>
+                    <th scope="col">Login</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Token</th>
+                    <th scope="col"><b>Role</b></th>
+                    <th scope="col"><b>Action>role</b></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for el in users.items %}
+                <tr>
+                    <td><b>{{ el.id }}</b></td>
+                    <td>{{ el.date.strftime('%d-%m-%Y') }}</td>
+                    <td>{{ el.login }}</td>
+                    <td>{{ el.email }}</td>
+                    <td>{{ el.token }}</td>
+                    <td> <b> {{ rteam[el.rid] }} </b></td>
+                    <td><a href="/adm/{{ el.id }}/brteam" class="btn btn-danger" title="Down user role">Down</a><a href="/adm/{{ el.id }}/nrteam" class="btn btn-success" title="Up user role">Up</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="alert alert-success" role="alert"> {{ pagination.links }} </div>
+        {% else %}
+            <p class="lead text-success"> !!! Users not found</p>
+        {% endif %}
+    {% endif %}
+{% endblock %}

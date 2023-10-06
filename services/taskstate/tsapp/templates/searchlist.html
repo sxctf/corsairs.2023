@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+SpaceFlightРass
+{% endblock %}
+
+{% block body %}
+    <p class="lead text-success"> <b> # You searched:</b> {{ tsearch }} </p>
+    {% if tasks|length > 0 %}
+    <table class="table table-dark text-success">
+        <thead>
+            <tr>
+                <th scope="col">#id</th>
+                <th scope="col">Date</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Owner</th>
+                <th scope="col">Private</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for el in tasks %}
+            <tr>
+                <td>{{ el.tid }}</td>
+                <td>{{ el.date.strftime('%d-%m-%Y') }}</td>
+                <td>{{ el.title }}</td>
+                <td>{{ el.description }}</td>
+                <td> // <b>{{ el.TS_User.login }}</b> </td>
+                <td> {{ el.private }} </td>
+                <td><b> {{ tstatus[el.kstatus] }} </b></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <p class="lead text-success"> !!! Nothing found for the task title</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+TaskState
+{% endblock %}
+
+{% block body %}
+<p class="lead text-success"> <b> # MyProfile on service TaskState </b> </p>
+<div class="alert alert-success" role="alert">
+    <p>Username (login): <b>{{ user.login }}</b></p>
+    <p>E-mail: <b>{{ user.email }}</b></p>
+    <p>Role in the team: <b>{{ rteam[rid] }}</b></p>
+    <p>Reg date:<b> {{ user.date.strftime('%d-%m-%Y') }}</b></p>
+    <a href="/logout" class="btn btn-success">Logout</a>
+</div>
+{% endblock %}

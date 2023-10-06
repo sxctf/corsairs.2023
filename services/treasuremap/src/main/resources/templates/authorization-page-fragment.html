@@ -1,0 +1,34 @@
+
+<body>
+<div id="main-container">
+
+    <div class="upper-part main-container">
+        <div class="search-container">
+        </div>
+        <div class="profile-menu">
+            <div class="nickname"> Corsair</div>
+            <div class="turn-to-map"> Treasure map</div>
+            <div class="turn-to-registration-btn"> Registration</div>
+        </div>
+    </div>
+
+    <div class="middle-container main-container">
+        <form th:action="@{/login}" method="post">
+            <div class="title">
+                Authorization
+            </div>
+            <div class="cred-container">
+
+                <input class="username-input" type="text" name="username" placeholder="Username"/>
+                <input class="password-input" type="password" name="password" placeholder="Password"/>
+
+            </div>
+            <input type="submit" value="Log in"/>
+        </form>
+    </div>
+
+    <div class="lower-part main-container">
+    </div>
+
+</div>
+</body>

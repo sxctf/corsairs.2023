@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+TaskState
+{% endblock %}
+
+{% block body %}
+    <p class="lead text-success"> # Task.ID: <b> {{ task.tid }} </b> Date: <b>{{ task.date.strftime('%d-%m-%Y') }}</b> </p>
+
+    <div class="alert alert-success">
+        Title: {{ task.title }}<br>
+        Description: {{ task.description }}<br>
+        Type: <b>{{ desteam[task.did] }}</b><br>
+        Owner: // {{ task.TS_User.login }}<br>
+        Executor: // {{ user2.login }}<br>
+        Private: {{ task.private }}<br>
+        Status task: <b>{{ tstatus[task.kstatus] }}</b><br>
+    </div>
+{% endblock %}

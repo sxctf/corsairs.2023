@@ -1,0 +1,15 @@
+version: '2.4'
+services:
+  shiplogs:
+    build: .
+    ports:
+      - 8080:8080
+    volumes:
+      - ./data:/data
+      - ./target:/target
+      - ./src:/src
+      - ./scripts:/scripts
+      - ./resources:/resources
+      - ./lib:/lib
+      - ./logs:/logs
+    restart: always

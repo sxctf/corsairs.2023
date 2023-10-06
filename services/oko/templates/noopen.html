@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Monitoring System
+{% endblock %}
+
+{% block body %}
+
+<button class="cyber-button3" style="text-decoration: none;">
+  <a href="/dblogin2">Check firmware</a>
+</button>
+
+<div>
+  <p style="font-family: Oxanium;">Heeeeyyy, you have found it. Load file to insert many firmware strings into storage. Just select txt file. Example of  content:</p>
+  <p style="font-family: Oxanium;">Best name;1.0.0;Android;250</p>
+  <p style="font-family: Oxanium;">Then send file. After that, send it again to load data to database.</p>
+</div>
+
+<div class="container">
+    <form enctype="multipart/form-data" method="post">
+      <label for="upload_custom" class="upload_label">
+        <p class="drag_text">Choose file to Upload</p>
+        <input type="file" class="upload_hide" name="file">
+        <button type="submit" class="send_file">Send</button>
+      </label>
+     </form> 
+  </div>
+
+{% endblock %}

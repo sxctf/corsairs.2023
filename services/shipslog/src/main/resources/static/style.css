@@ -1,0 +1,15 @@
+table {
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 2px;
+    border-color: darkgreen;
+    background-color: #002800;
+}
+body{
+    background-color: black;
+    color: forestgreen;
+    text-align: center;
+
+}

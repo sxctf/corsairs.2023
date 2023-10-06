@@ -1,0 +1,353 @@
+@import url(https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700&display=swap);
+
+
+
+.form_auth_block{
+    position: relative;
+    left: 1400px;
+    bottom: 410px;
+    width: 350px;
+    height: 500px;
+    background-size: cover;
+    border-radius: 4px;
+    font-family: Oxanium;
+}
+
+.form_auth_block_head_text{
+    display: block;
+    padding: 1px;
+    font-size: 30px;
+    font-weight: 600;
+    color: cyan;
+}
+
+.form_auth_block label{
+    display: block;
+    padding: 10px;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+ 
+
+.form_auth_style input{
+  display: block;
+  margin: 0 auto;
+  width: 320px;
+  height: 40px;
+  border-radius: 10px;  
+  border: 3px solid cyan;
+  background-color: #cba901;
+  font-family: Oxanium;
+  color: #fff;
+  font-size: 1em;
+}
+
+input:focus {
+  border-radius: 10px;
+  border: 2px solid #436fea;
+}
+.form_auth_button{
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    height: 35px;
+    border: none;
+    cursor: pointer;
+    background-color: #b957ce;
+    color: yellow;
+    font-family: Oxanium;
+    font-size: 1.5em;
+}
+::-webkit-input-placeholder {color:#3f3f44; padding-left: 10px;} 
+::-moz-placeholder          {color:#3f3f44; padding-left: 10px;} 
+:-moz-placeholder           {color:#3f3f44; padding-left: 10px;} 
+:-ms-input-placeholder      {color:#3f3f44; padding-left: 10px;} 
+
+.table {
+	width: 100%;
+	margin-bottom: 20px;
+	border: 1px solid #dddddd;
+	border-collapse: collapse; 
+    color: #fff;
+}
+.table th {
+	font-weight: bold;
+	padding: 5px;
+	background: #efefef;
+	border: 1px solid #dddddd;
+}
+.table td {
+	border: 1px solid #dddddd;
+	padding: 5px;
+    font-size: medium;
+    font-weight: normal;
+}
+
+
+/* Weapon Settings */
+.update_data1 {
+    max-width: 560px;
+    position: relative;
+    top: 30px;
+    left: 128px;
+    font-size: 25px;
+    font-family: Oxanium;
+    color: white;
+}
+
+.update_data1 input{
+    width: 585px;
+    height: 50px;
+    background-color: #cba901;
+    border-radius: 5px;
+    border: 3px solid cyan;
+    color: #fff;
+    font-family: Oxanium;
+    font-size: 1em;
+}
+
+.check_data1 {
+    width: 50%;
+    position: relative;
+    top: 80px;
+    left: 128px;
+    font-size: 25px;
+    font-family: Oxanium;
+    color: white;
+}
+
+.check_data1 input{
+    width: 585px;
+    height: 50px;
+    background-color: #cba901;
+    border-radius: 5px;
+    border: 3px solid cyan;
+    /* opacity: 70%; */
+    color: #fff;
+    font-family: Oxanium;
+    font-size: 1em;
+}
+
+/* Firmware settings */
+.update_data2 {
+    max-width: 560px;
+    position: relative;
+    /* top: 200px; */
+    /* left: 128px; */
+    font-size: 25px;
+    font-family: Oxanium;
+    color: white;
+}
+
+.update_data2 input{
+    width: 585px;
+    height: 50px;
+    background-color: #cba901;
+    border-radius: 5px;
+    border: 3px solid cyan;
+    color: #fff;
+    font-family: Oxanium;
+    font-size: 1em;
+}
+
+.check_data2 {
+    bottom: 420px;
+    width: 50%;
+    position: relative;
+    left: 700px;
+    font-size: 25px;
+    font-family: Oxanium;
+    color: white;
+}
+
+.check_data2 input{
+    width: 585px;
+    height: 50px;
+    background-color: #cba901;
+    border-radius: 5px;
+    border: 3px solid cyan;
+    /* opacity: 70%; */
+    color: #fff;
+    font-family: Oxanium;
+    font-size: 1em;
+}
+
+.intf {
+    position: absolute;
+    border:1px solid black;
+    width: 100px;
+    height: 100px;
+}
+
+.weap_count {
+    position: relative;
+    left: 1623px;
+    top: -75px;
+    /* border:1px solid rgb(255, 166, 0); */
+    width: 200px;
+    height: 50px;
+    font-size: 60px;
+    text-align: center;
+    color: red;
+    font-family: Oxanium;
+}
+
+.weap_count_text {
+    position: relative;
+    left: 1600px;
+    top: 5px;
+    /* border:1px solid rgb(255, 166, 0); */
+    width: 250px;
+    height: 100px;
+    font-size: 30px;
+    text-align: center;
+    color: cyan;
+    font-family: Oxanium;
+}
+
+
+.zone1 {
+    position: relative;
+    top: 411px;
+    left: 823px;
+    border: none;
+    border-radius: 2px;
+    opacity: .5;
+    width: 200px;
+    padding: 30px 10px;
+    font-family: Oxanium;
+}
+
+.zone2 {
+    position: relative;
+    top: 478px;
+    left: 823px;
+    border: none;
+    border-radius: 2px;
+    opacity: .5;
+    width: 200px;
+    /* height: 200px; */
+    padding: 30px 10px;
+    font-family: Oxanium;
+}
+
+.weapon_zone {
+    position: absolute;
+    top:10px
+}
+
+/* Weapon Storage */
+.cyber-button1 {
+    font-family: Oxanium;
+    font-size: 30px;
+    color: cyan;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Ship firmware */
+.cyber-button2 {
+    font-family: Oxanium;
+    font-size: 30px; 
+    color: red;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.cyber-button3 {
+    font-family: Oxanium;
+    font-size: 20px;
+    background-color: #b957ce;
+    color: yellow;
+    border: 1px solid cyan;
+    border-radius: 7px;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+.cyber-button4 {
+    position: relative;
+    left: 128px;
+    font-family: Oxanium;
+    font-size: 30px;
+    background-color: #b957ce;
+    color: yellow;
+    border: 1px solid cyan;
+    border-radius: 7px;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    text-decoration: none;
+}
+
+.cyber-button5 {
+    position: relative;
+    font-family: Oxanium;
+    font-size: 30px;
+    background-color: #b957ce;
+    color: yellow;
+    border: 1px solid cyan;
+    border-radius: 7px;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    text-decoration: none;
+}
+
+.container {
+    position: static;
+    max-width: 1160px;
+    margin: 0 auto;
+    font-family: Oxanium;
+}
+
+.upload_hide {
+    position: absolute;
+    max-width: 150px;
+    max-height: 150px;
+    width: 50%;
+    height: 30%;
+    margin: 20px;
+    left: 15%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+    /* text-align: center; */
+    align-content: center;
+}
+
+.upload_label {
+    position: absolute;
+    max-width: 500px;
+    max-height: 250px;
+    width: 100%;
+    height: 100%;
+    margin: 20px;
+    border: 1px dashed #2b0e66;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    border-radius: 8px;
+    flex-direction: column;
+}
+
+.send_file { 
+    width: 200px;
+    height: 50px;
+    border: none;
+    background-color: #f500bd;
+    color: #fff;
+    border-radius: 3px;
+    margin: 30px auto;
+}
+
+.drag_text {
+    font-size: 22px;
+    color: #00be67;
+    margin: 30px 0 0 0;
+}

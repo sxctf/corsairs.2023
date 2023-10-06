@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/navbar-fixed.css') }}">
+    <style>
+      .pagination-page-info {
+        padding: .6em;
+        padding-left: 0;
+        width: 40em;
+        margin: .5em;
+        margin-left: 0;
+        font-size: 12px;
+      }
+      .pagination-page-info b {
+          color: green;
+          background: #0c1618;
+          padding-left: 2px;
+          padding: .1em .25em;
+          font-size: 150%;
+      }
+    </style>
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body style="background-color: #000000;">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand text-success" href="/"><b>[TaskState]</b></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link" href="/myprofile">MyProfile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/mytask">MyTask</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/tasklist">TasksList</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/kanban">Kanban</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/userstatus">UserStatus</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search" action="/search" method="get">
+              <input class="form-control me-2" type="search" name="search" placeholder="Search task" aria-label="Search" class="text-success">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="p-5 rounded" style="background-color: #0c1618;">
+          {% block body %} {% endblock %}
+        </div>
+    </main>
+
+
+
+    <script src="{{ url_for('static',filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

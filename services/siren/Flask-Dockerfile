@@ -1,0 +1,14 @@
+FROM python:3.8-alpine
+
+WORKDIR /siren
+
+RUN mkdir logs secrets
+
+COPY ./requirements.txt requirements.txt
+RUN pip3 install -r requirements.txt
+
+COPY Siren.py Siren.py
+COPY templates templates
+ENTRYPOINT ["python3"]
+
+CMD ["Siren.py"]

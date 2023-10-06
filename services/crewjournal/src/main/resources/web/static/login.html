@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+    <body>
+        <div class="login">
+            <header class="index">
+                <h1>Crew Journal</h1>
+            </header>
+            <h1>Login Form</h1>
+            <form class="login_form" method="post" action="/login">
+                <label for="login_field">Login</label>
+                <br>
+                <input id="login_field" name="login_field" required>
+                <br>
+                <label for="password_field">Password</label>
+                <br>
+                <input id="password_field" type="password" name="password_field" required>
+                <br>
+                <p><input type="submit" value="Submit"></p>
+            </form>
+            <h3>
+                <a href="/addPirate.html">Do you want to become a member of our crew?</a>
+                <br><br>
+                <a href="/marque.html">Check your marque.</a>
+            </h3>
+        </div>
+        <script src="js/login.js"></script>
+    </body>
+</html>

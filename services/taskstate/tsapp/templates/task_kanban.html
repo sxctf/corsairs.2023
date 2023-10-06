@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}
+TaskState
+{% endblock %}
+
+{% block body %}
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="alert alert-warning" role="alert">
+        <ul class=flashes>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    {% endwith %}
+    <p class="lead text-success"> <b> # My Kanban Board // Executor: {{ login }} </b> </p>
+    {% if tasks|length > 0 %}
+    <table class="table table-dark text-success">
+        <thead>
+            <tr>
+                <th scope="col" style="width: 18rem;" class="table-warning text-warning">{{ tstatus[0] }}</th>
+                <th scope="col" style="width: 18rem;" class="table-primary text-primary">{{ tstatus[1] }}</th>
+                <th scope="col" style="width: 18rem;" class="table-success text-success">{{ tstatus[2] }}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% set tstatus0 = tasks | selectattr('kstatus', 'equalto', 0) %}
+        {% set tstatus1 = tasks | selectattr('kstatus', 'equalto', 1) %}
+        {% set tstatus2 = tasks | selectattr('kstatus', 'equalto', 2) %}
+        <tr>
+            <th class="table-warning">
+            {% for el in tstatus0 %}
+                <div class="card text-success border-success mb-1" style="width: 15rem;">
+                <div class="card-body">
+                  <h5 class="card-title">#ID: <b>{{ el.tid }}</b> [<b>{{ el.date.strftime('%d-%m-%Y') }}</b>]</h5>
+                  <h6 class="card-subtitle mb-2 text-body-secondary">{{ el.title }}</h6>
+                  <a href="/task/{{ el.tid }}/bstatus" class="btn btn-success" title="Back status">&lt;&lt;</a><a href="/task/{{ el.tid }}/nstatus" class="btn btn-success" title="Next status">&gt;&gt;</a>
+                </div>
+                </div>
+            {% endfor %}
+            </th>
+            <th class="table-primary">
+                {% for el in tstatus1 %}
+                <div class="card text-success border-success mb-1" style="width: 15rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">#ID: <b>{{ el.tid }}</b> [<b>{{ el.date.strftime('%d-%m-%Y') }}</b>]</h5>
+                      <h6 class="card-subtitle mb-2 text-body-secondary">{{ el.title }}</h6>
+                      <a href="/task/{{ el.tid }}/bstatus" class="btn btn-success" title="Back status">&lt;&lt;</a><a href="/task/{{ el.tid }}/nstatus" class="btn btn-success" title="Next status">&gt;&gt;</a>
+                    </div>
+                    </div>
+                {% endfor %}
+            </th>
+            <th class="table-success">
+                {% for el in tstatus2 %}
+                <div class="card text-success border-success mb-1" style="width: 15rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">#ID: <b>{{ el.tid }}</b> [<b>{{ el.date.strftime('%d-%m-%Y') }}</b>]</h5>
+                      <h6 class="card-subtitle mb-2 text-body-secondary">{{ el.title }}</h6>
+                      <a href="/task/{{ el.tid }}/bstatus" class="btn btn-success" title="Back status">&lt;&lt;</a><a href="/task/{{ el.tid }}/nstatus" class="btn btn-success" title="Next status">&gt;&gt;</a>
+                    </div>
+                    </div>
+                {% endfor %}
+            </th>
+        </tr>
+        </tbody>
+    </table>
+    {% else %}
+        <p class="lead text-success"> !!! Task not found</p>
+    {% endif %}
+{% endblock %}

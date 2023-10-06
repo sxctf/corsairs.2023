@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+TaskState
+{% endblock %}
+
+{% block body %}
+    <p class="lead text-success"> <b> # Users statistics &gt;&gt;</b> </p>
+    {% if users.items|length > 0 %}
+    <table class="table table-dark text-success">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">// User</th>
+                <th scope="col"># CountTask</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for el in users.items %}
+            <tr>
+                <td>{{ el.id }}</td>
+                <th>{{ el.login }}</th>
+                <td>{{ el.TS_Task|length }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="alert alert-success" role="alert"> {{ pagination.links }} </div>
+
+
+    {% else %}
+        <p class="lead text-success"> !!! Users data not found</p>
+    {% endif %}
+{% endblock %}

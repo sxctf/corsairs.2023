@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crew Journal: Crew List</title>
+    <link rel="stylesheet" href="css/crewList.css">
+</head>
+    <body>
+        <header class="crew_list">
+            <h1>Crew Journal</h1>
+        </header>
+        <div class="crew_list">
+            <h1>Crew List</h1>
+            <br/>
+            <table border=1>
+                <tr>
+                    <th>Name</th>
+                    <th>Rank</th>
+                    <th>Login</th>
+                    <th>Password</th>
+                    <th>Passport</th>
+                    <th>Email</th>
+                </tr>
+                <#list pirateList as pirate>
+                    <tr>
+                        <td class="name">${pirate.name}</td>
+                        <td class="rank">
+                            <#if isUserCaptain == true>
+                            <form method="post" action="/crewList" class="rank_change_form">
+                                <input class="id_field" type="text" name="id_field" value="${pirate.id}" readonly hidden>
+                                <input id="rank_field" type="text" value="${pirate.rank}" name="rank_field" required class="rank_field">
+                                <br>
+                                <p><input type="submit" value="Change"></p>
+                            </form>
+                            <#else>
+                                ${pirate.rank}</td>
+                            </#if>
+                        <td class="login">${pirate.login}</td>
+                        <td class="password">
+                            <#if (pirate.sessionID?length) gt 0>
+                                <form method="post" action="/crewList" onsubmit="passwordControl();" class="password_change_form">
+                                    <input class="id_field" type="text" name="id_field" value="${pirate.id}" readonly hidden>
+                                    <input id="password_field1" type="password" name="password_field1" required value="12345" minlength="8" class="password_field">
+                                    <br>
+                                    <input id="password_field2" type="password" name="password_field2" required value="12345" minlength="8" class="password_field">
+                                    <#if pirate.email == "some@mail.some">
+                                        <p><input type="submit" value="Change" disabled></p>
+                                    <#else>
+                                        <p><input type="submit" value="Change"></p>
+                                    </#if>
+                                </form>
+                            <#else>
+                                ***********
+                            </#if>
+                        </td>
+                        <td class="passport">${pirate.passport}</td>
+                        <td class="email">
+                            <#if (pirate.email == "some@mail.some") && ((pirate.sessionID?length) gt 0)>
+                                <form method="post" action="/crewList">
+                                    <input class="id_field" type="text" name="id_field" value="${pirate.id}" readonly hidden>
+                                    <input id="email_field" type="email" name="email_field" required value="some@mail.some" class="email_field">
+                                    <p><input type="submit" value="Change"></p>
+                                </form>
+                            <#else>
+                                ${pirate.email}
+                            </#if>
+                        </td>
+                    </tr>
+                </#list>
+            </table>
+        </div>
+        <script src="js/crewList.js"></script>
+    </body>
+</html>

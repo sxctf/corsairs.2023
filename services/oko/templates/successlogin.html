@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='./favicon.ico')}}">
+    <link rel="image" href="{{ url_for('static', filename='./Interfeys_7.png')}}">
+    <title>Monitoring System</title>
+</head>
+
+<body background="static/fon.png" style="background-size: auto;">
+
+<h1 style='text-align: center; font-family: Oxanium; color: yellow;'>Ship's AmmunitioN STATUS<h1>
+
+<div>
+    <button class="cyber-button5" style="text-decoration: none;">
+        <a href="/">Main Page<a>
+    </button>
+    <button class="cyber-button5" style="text-decoration: none;">
+        <a href="/dblogin">Back<a>
+    </button>    
+</div>
+
+<table class="table">
+    <tr>
+        <td style="font-weight: bold; font-family: Oxanium; color:cyan; text-align:center;">ID</td>
+        <td style="font-weight: bold; font-family: Oxanium; color:cyan; text-align:center;">Factory_name</td>
+        <td style="font-weight: bold; font-family: Oxanium; color:cyan; text-align:center;">Weapon Name</td>
+        <td style="font-weight: bold; font-family: Oxanium; color:cyan; text-align:center;">Serial Number</td>
+    </tr>
+    {% for element in elements %}
+    <tr>
+        <td style="font-family: Oxanium; text-align:center; color:yellow" id='0'>{{element[0]}}</td>
+        <td style="font-family: Oxanium; text-align:center;" id='1'>{{element[1]}}</td>
+        <td style="font-family: Oxanium; text-align:center;" id='2'>{{element[2]}}</td>
+        <td style="font-family: Oxanium; text-align:center;" id='3'>{{element[3]}}</td>
+    </td>
+    {% endfor %}
+
+</body>
+</html>

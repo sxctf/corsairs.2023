@@ -1,0 +1,10 @@
+version: '2.20.3'
+services:
+  nginx:
+    image: nginx:latest
+    container_name: start_page
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - ./:/usr/share/nginx/html

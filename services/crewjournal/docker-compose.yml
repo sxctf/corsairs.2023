@@ -1,0 +1,13 @@
+version: '3.0'
+
+services:
+        crewjournal:
+                build: .
+                ports:
+                        - 9000:9000
+                volumes:
+                        - ./log:/log
+                        - ./data:/data
+                        - ./src:/src
+                        - ./build:/build
+                restart: always
