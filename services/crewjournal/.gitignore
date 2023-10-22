@@ -44,5 +44,4 @@ out
 *.lock
 
 #Data files
-*.csv
 *.db
