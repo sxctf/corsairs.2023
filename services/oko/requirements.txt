@@ -1,0 +1,4 @@
+Flask
+mariadb
+pymongo
+gunicorn==21.2.0
